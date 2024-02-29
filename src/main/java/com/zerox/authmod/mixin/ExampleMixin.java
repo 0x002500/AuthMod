@@ -1,4 +1,4 @@
-package authmod.zerox.com.mixin;
+package com.zerox.authmod.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
