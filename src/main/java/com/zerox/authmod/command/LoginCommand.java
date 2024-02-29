@@ -10,8 +10,8 @@ public class LoginCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher){
         dispatcher.register(literal("login")
                 //.requires(source -> source.hasPermissionLevel(2)) // 只有管理员能够执行命令。命令不会对非操作员或低于 1 级权限的玩家显示在 tab-完成中，也不会让他们执行。
-                .then(argument("color", ColorArgumentType.color())
-                        .then(argument("message", greedyString())
+                .then(argument("username", ColorArgumentType.color())
+                        .then(argument("password", greedyString())
                                 .executes(ctx -> broadcast(ctx.getSource(), getColor(ctx, "color"), getString(ctx, "message")))))); // 你可以在这里处理参数，并处理成命令。
     }
 
