@@ -1,6 +1,7 @@
 package com.zerox.authmod;
 
-import com.zerox.authmod.commands.*;
+import com.zerox.authmod.commands.ChangePasswordCommand;
+import com.zerox.authmod.commands.LoginCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import org.slf4j.Logger;
