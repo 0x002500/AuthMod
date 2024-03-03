@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "authmod",
+	"id": "auth_mod",
 	"version": "${version}",
 	"name": "AuthMod",
-	"description": "a auth mod in fabric with web register",
+	"description": "an auth mod in fabric with web register",
 	"authors": [
 		"Me!"
 	],
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/authmod/icon.png",
+	"icon": "assets/auth_mod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,7 +23,7 @@
 		]
 	},
 	"mixins": [
-		"authmod.mixins.json"
+		"auth_mod.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.7",
