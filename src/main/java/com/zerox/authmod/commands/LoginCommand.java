@@ -9,22 +9,24 @@ import org.slf4j.LoggerFactory;
 
 import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 import static com.mojang.brigadier.arguments.StringArgumentType.greedyString;
+import com.zerox.authmod.logic.LoginCommandLogic;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
 
 public class LoginCommand {
-    public static final Logger test = LoggerFactory.getLogger("AuthMod_test");
+    public static final Logger LOGGER = LoggerFactory.getLogger("AuthMod");
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("login")
                 .then(argument("password", greedyString())
-                        .executes(ctx -> verify_password(ctx.getSource(), getString(ctx, "password")))));
+                        .executes(ctx -> get_info(ctx.getSource(), getString(ctx, "password")))));
     }
 
-    private static int verify_password(ServerCommandSource source, String password) throws CommandSyntaxException {
+    private static int get_info(ServerCommandSource source, String password) throws CommandSyntaxException {
         // get the command source
         final String name = source.getName();
-        test.info(name);
+        // verify the password
+        final boolean is_player = LoginCommandLogic.verifyPassword(name, password);
         return Command.SINGLE_SUCCESS; // 成功
     }
 }
