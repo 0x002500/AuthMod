@@ -14,7 +14,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class ChangePasswordCommand {
     public static final Logger test = LoggerFactory.getLogger("AuthMod_test");
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(literal("login")
+        dispatcher.register(literal("changePassword")
                 .then(argument("old_password", greedyString())
                         .then(argument("new_password", greedyString()))
                         .executes(ctx -> change_password(ctx.getSource(), getString(ctx, "old_password"), getString(ctx, "new_password")))));
