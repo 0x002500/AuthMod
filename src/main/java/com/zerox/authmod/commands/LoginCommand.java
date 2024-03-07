@@ -12,6 +12,7 @@ import static com.mojang.brigadier.arguments.StringArgumentType.greedyString;
 import com.zerox.authmod.logic.LoginCommandLogic;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
+import java.util.UUID;
 
 
 public class LoginCommand {
@@ -24,9 +25,9 @@ public class LoginCommand {
 
     private static int get_info(ServerCommandSource source, String password) throws CommandSyntaxException {
         // get the command source
-        final String name = source.getName();
+        UUID sourceUuid = source.getPlayer().getUuid();
         // verify the password
-        final boolean is_player = LoginCommandLogic.verifyPassword(name, password);
+        final boolean is_player = LoginCommandLogic.verifyPassword(sourceUuid, password);
         return Command.SINGLE_SUCCESS; // 成功
     }
 }
