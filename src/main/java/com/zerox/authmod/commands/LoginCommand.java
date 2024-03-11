@@ -25,9 +25,10 @@ public class LoginCommand {
 
     private static int get_info(ServerCommandSource source, String password) throws CommandSyntaxException {
         // get the command source
-        UUID sourceUuid = source.getPlayer().getUuid();
+        String sourceName = String.valueOf(source.getName());
+        LOGGER.info(sourceName);
         // verify the password
-        final boolean is_player = LoginCommandLogic.verifyPassword(sourceUuid, password);
+        final boolean is_player = LoginCommandLogic.verifyPassword(sourceName, password);
         return Command.SINGLE_SUCCESS; // 成功
     }
 }
