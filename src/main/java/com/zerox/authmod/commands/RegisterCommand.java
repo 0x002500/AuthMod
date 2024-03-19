@@ -13,12 +13,10 @@ import static com.mojang.brigadier.arguments.StringArgumentType.greedyString;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-
-public class LoginCommand {
-    public static final Logger LOGGER = LoggerFactory.getLogger("AuthMod");
+public class RegisterCommand {public static final Logger LOGGER = LoggerFactory.getLogger("AuthMod");
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(literal("login")
+        dispatcher.register(literal("register")
                 .then(argument("password", greedyString())
                         .executes(ctx -> get_info(ctx.getSource(), getString(ctx, "password")))));
     }
