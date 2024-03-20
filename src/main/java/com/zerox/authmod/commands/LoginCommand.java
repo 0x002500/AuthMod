@@ -3,7 +3,7 @@ package com.zerox.authmod.commands;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.zerox.authmod.logic.LoginCommandLogic;
+//import com.zerox.authmod.logic.LoginCommandLogic;
 import net.minecraft.server.command.ServerCommandSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class LoginCommand {
         // get the command source
         String senderUUID = source.getPlayer().getUuid().toString();
         // verify the password
-        final boolean is_player = LoginCommandLogic.verifyPassword(senderUUID, password);
+        //final boolean is_player = LoginCommandLogic.verifyPassword(senderUUID, password);
         return Command.SINGLE_SUCCESS; // 成功
     }
 }

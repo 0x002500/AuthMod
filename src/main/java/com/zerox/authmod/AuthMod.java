@@ -2,6 +2,7 @@ package com.zerox.authmod;
 
 import com.zerox.authmod.commands.ChangePasswordCommand;
 import com.zerox.authmod.commands.LoginCommand;
+import com.zerox.authmod.commands.RegisterCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ public class AuthMod implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
             LoginCommand.register(dispatcher);
             ChangePasswordCommand.register(dispatcher);
+            RegisterCommand.register(dispatcher);
         });
     }
 }
